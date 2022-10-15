@@ -1,3 +1,12 @@
+Dance Space - A Dance Style Informational 
+
+Technology Stack: 
+React - Create-React-App
+MaterialUI
+AWS Amplify Hosting
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
