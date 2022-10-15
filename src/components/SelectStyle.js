@@ -1,37 +1,37 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
-export default function BasicSelect() {
-  const [style, setStyle] = React.useState('');
-
-  const handleChange = (event) => {
-    setStyle(event.target.value);
-  };
-
+export default function ComboBox() {
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl sx={{ m: 14, minWidth: 1100 }}>
-        <InputLabel id="demo-simple-select-label">Select Style of Dance</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={style}
-          label="Style"
-          onChange={handleChange}
-        >
-          <MenuItem value={'Ballet'}>Ballet</MenuItem>
-          <MenuItem value={'Jazz'}>Jazz</MenuItem>
-          <MenuItem value={'Lyrical'}>Lyrical</MenuItem>
-          <MenuItem value={'Contemporary'}>Contemporary</MenuItem>
-          <MenuItem value={'Tap'}>Tap</MenuItem>
-          <MenuItem value={'Ballroom'}>Ballroom</MenuItem>
-          <MenuItem value={'Hip-Hop'}>Hip-Hop</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
+    <Autocomplete
+      disablePortal
+      id="combo-box-demo"
+      options={danceStyles}
+      sx={{ width: 1400, p: 14 }}
+      renderInput={(params) => <TextField {...params} label="Choose a Style of Dance" />}
+    />
   );
 }
+
+// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
+const danceStyles = [
+  { label: 'Ballet', id: 1 },
+  { label: 'Jazz', id: 2 },
+  { label: 'Lyrical', id: 3 },
+  { label: 'Contemporary', id: 4 },
+  { label: 'Tap', id: 5 },
+  { label: "Ballroom", id: 6 },
+  { label: 'Hip-Hop', id: 7 },
+];
+
+
+
+// ballet
+// jazz
+// lyrical
+// contemporary
+// tap
+// ballroom
+// hiphop
+// salsa
