@@ -16,7 +16,9 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import SelectStyle from './SelectStyle';
+import InfoCard from './InfoCard';
 
+import InfoVideo from './InfoVideo';
 // Copyright in the Footer Section 
 function Copyright() {
   return (
@@ -36,6 +38,8 @@ const cards = [1, 2, 3];
 const theme = createTheme();
 
 export default function Album() {
+const [data, setData] = React.useState({ response: {}, selected: '' });
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -122,7 +126,9 @@ export default function Album() {
       </main>
 
       {/* Select Style Component */}
-      <SelectStyle />
+      <SelectStyle setData={setData}/>
+      <InfoCard data={data} />
+      <InfoVideo selected={data.selected} />
       {/* Footer Component/ stretch goal: to add a link with a link to google maps to find dance studios */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
@@ -142,3 +148,5 @@ export default function Album() {
     </ThemeProvider>
   );
 }
+
+// next two hours - get a video to show 
