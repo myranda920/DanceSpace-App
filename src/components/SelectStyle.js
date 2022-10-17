@@ -22,13 +22,13 @@ export default function ComboBox(props) {
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const danceStyles = [
-  { label: 'Ballet Dance', id: 1 },
-  { label: 'Jazz Dance', id: 2 },
-  { label: 'Lyrical Dance', id: 3 },
-  { label: 'Contemporary Dance', id: 4 },
-  { label: 'Tap Dance', id: 5 },
-  { label: "Ballroom Dance", id: 6 },
-  { label: 'Hip-Hop Dance', id: 7 },
+  { label: 'Ballet', id: 1 },
+  { label: 'Jazz', id: 2 },
+  { label: 'Lyrical', id: 3 },
+  { label: 'Contemporary', id: 4 },
+  { label: 'Tap', id: 5 },
+  { label: "Ballroom", id: 6 },
+  { label: 'Hip-Hop', id: 7 },
 ];
 
 const getInfo = (event, setData) => {
