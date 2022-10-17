@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 const bull = (
   <Box
@@ -24,8 +25,9 @@ export default function BasicCard(props) {
   console.log(response);
 
   return (
-    <Card sx={{  width: 500 }}>
-      <CardContent className="card-content">
+    <Container className="card-container">
+    <Card sx={{  width: 1200 }}>
+      <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Let's learn about...
         </Typography>
@@ -44,5 +46,6 @@ export default function BasicCard(props) {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
+    </Container>
   );
 }

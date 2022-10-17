@@ -23,7 +23,7 @@ export default function InfoVideo(props) {
     if (selectedData?.videoIds) {
         selectedData.videoIds.forEach((videoId) => {
             // you can push extra divs inside to style
-           videos.push(<YouTube videoId={videoId} opts={opts} onReady={onReady} />);
+           videos.push(<YouTube className="container-video" videoId={videoId} opts={opts} onReady={onReady} />);
         });
         return videos;
     }

@@ -42,7 +42,13 @@
   justify-content: center;
 }
 
-.card-content {
-  text-align: center;
+
+#root .card-container {
+  display: flex;
+  justify-content: center;
 }
 
+#root .container-video {
+  display: flex;
+  justify-content: center;
+}
