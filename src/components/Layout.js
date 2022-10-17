@@ -17,7 +17,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import SelectStyle from './SelectStyle';
 import InfoCard from './InfoCard';
-
 import InfoVideo from './InfoVideo';
 // Copyright in the Footer Section 
 function Copyright() {
@@ -101,7 +100,7 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image="Images/Information1Image.jpeg"
+                    image="Images/Information1Image.png"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
