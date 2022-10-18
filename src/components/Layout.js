@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
 
 import SelectStyle from './SelectStyle';
 import InfoCard from './InfoCard';
@@ -33,7 +34,17 @@ function Copyright() {
 }
 
 const cards = [1, 2, 3];
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#212121',
+    },
+    secondary: {
+      main: '#424242',
+    },
+  },
+});
 
 export default function Album() {
 const [data, setData] = React.useState({ response: {}, selected: '' });
