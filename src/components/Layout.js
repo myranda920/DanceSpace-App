@@ -33,7 +33,6 @@ function Copyright() {
 }
 
 const cards = [1, 2, 3];
-
 const theme = createTheme();
 
 export default function Album() {
@@ -89,8 +88,8 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
 
 
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {(cards[1]) = 
+              <Grid item key={cards[1]} xs={12} sm={6} md={4}>
                 <Card
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
@@ -105,12 +104,13 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Background
+                      About
                     </Typography>
                     <Typography>
                       This Space provides a background on any style of dance you are curious about. Many times on the internet there is SO much to search
                       for it is imporant to narrow it down to the most important facts of a particular dance style. It can be history, artists, training, 
-                      or culture. 
+                      or culture. This site provides you with information, a few demonstration videos that range from beggining level dance to advanced competitive dance and performing. 
+                      Lastly, you can find studio reviews based on location.
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -119,7 +119,71 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
                   </CardActions>
                 </Card>
               </Grid>
-            ))}
+            }
+            {(cards[2]) = 
+              <Grid item key={cards[2]} xs={12} sm={6} md={4}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <CardMedia
+                    component="img"
+                    sx={{
+                      // 16:9
+                      pt: '56.25%',
+                    }}
+                    image="Images/Information1Image.png"
+                    alt="random"
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    Why dance?
+                    </Typography>
+                    <Typography>
+                    There are many reasons to learn how to dance. Dance can provide great discipline and technical trainings for kids to adults. It can provide a community of support and great mentors. 
+                    It can be a great hobby but can also become something you can make a career out of. One can become a professional dancer and teacher. Many dancers go on to top college dance teams as well. 
+                    For people who don’t enjoy running or going to the gym, dance can be a great form of cardio and strength training.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    {/* <Button size="small">More Information</Button> */}
+                    {/* <Button size="small">Edit</Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+            }
+            {(cards[3]) = 
+              <Grid item key={cards[3]} xs={12} sm={6} md={4}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <CardMedia
+                    component="img"
+                    sx={{
+                      // 16:9
+                      pt: '56.25%',
+                    }}
+                    image="Images/Information1Image.png"
+                    alt="random"
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Training
+                    </Typography>
+                    <Typography>
+                    There are a large variety of dance studios around the world that specialize in teaching kids from ages 3-18. 
+                    Most of these studios provide recreational classes along with competition training. 
+                    Being a competition dancer means you can compete at local and national competions. 
+                    This teaches kids how to work hard, and becoming great athletes and performers. 
+                    There are also many studios that provide adult classes for more fun and exercise as well as great dance training. 
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    {/* <Button size="small">More Information</Button> */}
+                    {/* <Button size="small">Edit</Button> */}
+                  </CardActions>
+                </Card>
+              </Grid>
+            }
           </Grid>
         </Container>
       </main>
