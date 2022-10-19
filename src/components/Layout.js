@@ -89,7 +89,7 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">What is Dance Space?</Button>
+              <Button size="large" variant="contained">What is Dance Space?</Button>
               {/* <Button variant="outlined">Secondary action</Button> */}
             </Stack>
           </Container>
