@@ -13,14 +13,18 @@ For someone who is interested in dance, it can be tough to know exactly what inf
 ## Technologies Used
 
 React - Create React App
+
 MaterialUI
+
 AWS Amplify
 
 
 ### APIs
 
 [Wikipedia API](https://reactjs.org/).
+
 [Youtube API](https://reactjs.org/).
+
 [Yelp API](https://reactjs.org/).
 
 ### Learning
