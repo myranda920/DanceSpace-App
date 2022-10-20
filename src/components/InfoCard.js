@@ -7,6 +7,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
+import { appData } from '../config/data';
+
+
+
 const bull = (
   <Box
     component="span"
@@ -17,12 +21,12 @@ const bull = (
 );
 
 export default function BasicCard(props) {
-  const { response } = props.data;
+  const { data } = props;
+  const { response, selected } = data;
   const { query } = response;
- 
   const item = query?.search[0]
-
-  console.log(response);
+  const selectedData = appData[selected];
+  const wikiContent = item?.snippet.replace(/<[^>]+>/g, "");
 
   return (
     <Container className="card-container">
@@ -35,10 +39,11 @@ export default function BasicCard(props) {
           {item?.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          
+          {/* {wikiContent} */}
         </Typography>
         <Typography variant="body2">
-          {item?.snippet}
+          {wikiContent}
+          {selectedData?.wikiInfo}
         </Typography>
       </CardContent>
       <CardActions>
@@ -49,3 +54,11 @@ export default function BasicCard(props) {
     </Container>
   );
 }
+
+
+// https://en.wikipedia.org/wiki/Ballet
+// https://en.wikipedia.org/wiki/Jazz_dance
+// https://en.wikipedia.org/wiki/Lyrical_dance
+// https://en.wikipedia.org/wiki/Tap_dance
+// https://en.wikipedia.org/wiki/Ballroom_dance
+// https://en.wikipedia.org/wiki/Hip_hop_dance

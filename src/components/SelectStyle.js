@@ -39,6 +39,7 @@ const getInfo = (event, setData) => {
    if(target?.value) getWikiInfo(target?.value, setData)
 }
 
+
 const getWikiInfo = (query, setData) => {
     fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&origin=*&srsearch=${query}`)
       .then((response) => response.json())
