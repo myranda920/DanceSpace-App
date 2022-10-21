@@ -19,6 +19,7 @@ import { grey } from '@mui/material/colors';
 import SelectStyle from './SelectStyle';
 import InfoCard from './InfoCard';
 import InfoVideo from './InfoVideo';
+
 // Copyright in the Footer Section 
 function Copyright() {
   return (
@@ -33,21 +34,20 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3];
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#212121',
-    },
-    secondary: {
-      main: '#424242',
-    },
-  },
-});
-
 export default function Album() {
-const [data, setData] = React.useState({ response: {}, selected: '' });
+  const [data, setData] = React.useState({ response: {}, selected: '' });
+  const cards = [1, 2, 3];
+  const theme = createTheme({
+    palette: {
+      mode: 'light',
+      primary: {
+        main: '#212121',
+      },
+      secondary: {
+        main: '#424242',
+      },
+    },
+  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -133,9 +133,7 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
             }
             {(cards[2]) = 
               <Grid item key={cards[2]} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }} >
                   <CardMedia
                     component="img"
                     sx={{
@@ -164,9 +162,7 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
             }
             {(cards[3]) = 
               <Grid item key={cards[3]} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                   <CardMedia
                     component="img"
                     sx={{
@@ -200,7 +196,7 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
       </main>
 
       {/* Select Style Component */}
-      <SelectStyle setData={setData}/>
+      <SelectStyle selected={data.selected} setData={setData} />
       <InfoCard data={data} />
       <InfoVideo selected={data.selected} />
       {/* Footer Component/ stretch goal: to add a link with a link to google maps to find dance studios */}
@@ -222,5 +218,3 @@ const [data, setData] = React.useState({ response: {}, selected: '' });
     </ThemeProvider>
   );
 }
-
-// next two hours - get a video to show 
