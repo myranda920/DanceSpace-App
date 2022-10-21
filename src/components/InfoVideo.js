@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState, memo } from 'react'
 import { appData } from '../config/data';
 
 import YouTube from 'react-youtube';
 
-export default function InfoVideo(props) {
-    const { selected } = props;
+function InfoVideo({ selected }) {
+    const [videos, setVideos] = useState([]);
     const selectedData = appData[selected];
     const opts = {
       height: '390',
@@ -15,16 +15,30 @@ export default function InfoVideo(props) {
       },
     }
 
+    const getYoutubeId = async (youtubeVideoTitle) => {
+      fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCiw2j4rm3wZiy6qCo1C-eZk1Nk3ILIEJs&maxResults=1&type=video&part=snippet&q=${youtubeVideoTitle}`)
+        .then((result) => {
+          return result.json()
+        }).then(({ items }) => {
+          setVideos([...videos, <YouTube className="container-video" videoId={items[0].id.videoId} opts={opts} onReady={onReady} />]);
+        });
+    }
+
     const onReady = (event) => {
         // access to player in all event handlers via event.target
         event.target.pauseVideo();
     }
-    const videos = [];
-    if (selectedData?.videoIds) {
+
+    if (selectedData?.youtubeVideoTitles) {
+      selectedData.youtubeVideoTitles.forEach((youtubeVideoTitle) => {
+        getYoutubeId(youtubeVideoTitle)
+      });
+    } else if (selectedData?.videoIds) {
         selectedData.videoIds.forEach((videoId) => {
-            // you can push extra divs inside to style
-           videos.push(<YouTube className="container-video" videoId={videoId} opts={opts} onReady={onReady} />);
-        });
-        return videos;
+          videos.push(<YouTube className="container-video" videoId={videoId} opts={opts} onReady={onReady} />);
+      });
     }
+    return videos;
 }
+
+export default memo(InfoVideo);

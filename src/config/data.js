@@ -4,6 +4,9 @@ export const appData = {
         wikiInfo: "a concert dance form in France and Russia. It has since become a widespread and highly technical form of dance with its own vocabulary. Ballet has been influential globally and has defined the foundational techniques which are used in many other dance genres and cultures. Various schools around the world have incorporated their own cultures. As a result, ballet has evolved in distinct ways. A ballet as a unified work comprises the choreography and music for a ballet production. Ballets are choreographed and performed by trained ballet dancers. Traditional classical ballets are usually performed with classical music accompaniment and use elaborate costumes and staging, whereas modern ballets are often performed in simple costumes and without elaborate sets or scenery.",
         link: 'https://en.wikipedia.org/wiki/Ballet',
         wikiApiKey: 'Ballet_Dance',
+        youtubeVideoTitles: [
+            'Chace Dance Company Beginner Ballet | Lesson 1', 
+        ],
     },
     'Jazz': {
         videoIds: ['KmVMInvINt4', 'E8ZuVYd_9_w', 'ZLd-uB3L5_Y'],

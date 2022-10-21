@@ -1,8 +1,6 @@
 
 # Dance Space - A Dance Style Informational 
 
-Live Link [Dance Space](Dance Space - A Dance Style Informational ).
-
 Dance Space is an application where users can find information about a particular dance genre. A user starts by reading some information about the website and about the types or training and careers one can get from taking dance classes. 
 
 After this, they can choose from a drop down of dance styles. Once chosen, a small informational blurb taken from wikipedia will display along with three youtube videos showing demonstrations of the style. These videos mix from a range of beggining level to advanced dancers. 
@@ -21,13 +19,7 @@ AWS Amplify
 
 ### APIs
 
-[Wikipedia API](https://reactjs.org/).
+[Wikipedia API]
 
-[Youtube API](https://reactjs.org/).
-
-[Yelp API](https://reactjs.org/).
-
-### Learning
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Youtube API]
 
