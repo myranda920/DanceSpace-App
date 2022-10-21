@@ -4,7 +4,7 @@ import { appData, YOUTUBE_API_KEY } from '../config/data';
 import YouTube from 'react-youtube';
 
 function InfoVideo({ selected }) {
-    const [videos, setVideos] = useState([]);
+    const [youtubeVideos, setYoutubeVideos] = useState([]);
     const selectedData = appData[selected];
     const opts = {
       height: '390',
@@ -16,11 +16,11 @@ function InfoVideo({ selected }) {
     }
 
     const getYoutubeId = async (youtubeVideoTitle) => {
-      fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&maxResults=1&type=video&part=snippet&q=${youtubeVideoTitle}`)
+      await fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&maxResults=1&type=video&part=snippet&q=${youtubeVideoTitle}`)
         .then((result) => {
           return result.json()
         }).then(({ items }) => {
-          setVideos([...videos, <YouTube className="container-video" videoId={items[0].id.videoId} opts={opts} onReady={onReady} />]);
+          setYoutubeVideos([...videos, <YouTube className="container-video" videoId={items[0]?.id?.videoId} opts={opts} onReady={onReady} />]);
         });
     }
 
@@ -29,16 +29,18 @@ function InfoVideo({ selected }) {
         event.target.pauseVideo();
     }
 
+    const videos = [];
     if (selectedData?.youtubeVideoTitles) {
       selectedData.youtubeVideoTitles.forEach((youtubeVideoTitle) => {
         getYoutubeId(youtubeVideoTitle)
       });
+      return youtubeVideos;
     } else if (selectedData?.videoIds) {
         selectedData.videoIds.forEach((videoId) => {
           videos.push(<YouTube className="container-video" videoId={videoId} opts={opts} onReady={onReady} />);
       });
+      return videos;
     }
-    return videos;
 }
 
 export default memo(InfoVideo);
