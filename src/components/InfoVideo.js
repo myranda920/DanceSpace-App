@@ -1,5 +1,5 @@
 import React, { useState, memo } from 'react'
-import { appData } from '../config/data';
+import { appData, YOUTUBE_API_KEY } from '../config/data';
 
 import YouTube from 'react-youtube';
 
@@ -16,7 +16,7 @@ function InfoVideo({ selected }) {
     }
 
     const getYoutubeId = async (youtubeVideoTitle) => {
-      fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCiw2j4rm3wZiy6qCo1C-eZk1Nk3ILIEJs&maxResults=1&type=video&part=snippet&q=${youtubeVideoTitle}`)
+      fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&maxResults=1&type=video&part=snippet&q=${youtubeVideoTitle}`)
         .then((result) => {
           return result.json()
         }).then(({ items }) => {

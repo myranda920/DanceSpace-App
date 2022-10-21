@@ -1,3 +1,5 @@
+export const YOUTUBE_API_KEY = 'AIzaSyCiw2j4rm3wZiy6qCo1C-eZk1Nk3ILIEJs';
+
 export const appData = {
     'Ballet': {
         videoIds: ['Jb4-Mul_DmA', '9C0eBYW_2fg', '077BgT3h6As'],
