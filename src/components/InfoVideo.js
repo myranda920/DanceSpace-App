@@ -20,7 +20,9 @@ function InfoVideo({ selected }) {
         .then((result) => {
           return result.json()
         }).then(({ items }) => {
-          setYoutubeVideos([...videos, <YouTube className="container-video" videoId={items[0]?.id?.videoId} opts={opts} onReady={onReady} />]);
+          if (items){
+            setYoutubeVideos([...videos, <YouTube className="container-video" videoId={items[0]?.id?.videoId} opts={opts} onReady={onReady} />]);
+          }
         });
     }
 

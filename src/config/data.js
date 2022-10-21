@@ -1,4 +1,4 @@
-export const YOUTUBE_API_KEY = 'AIzaSyCiw2j4rm3wZiy6qCo1C-eZk1Nk3ILIEJs';
+export const YOUTUBE_API_KEY = 'AIzaSyCGsvrPuQ9bI2Hn4PVE4BKew8HxnOhSDHA';
 
 export const appData = {
     'Ballet': {
