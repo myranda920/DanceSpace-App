@@ -7,6 +7,7 @@ After this, they can choose from a drop down of dance styles. Once chosen, a sma
 
 For someone who is interested in dance, it can be tough to know exactly what information to look for. This app helps provide it to be easier then having to go through many google searches. 
 
+![Alt text](/Images/Homepageforreadme.png)
 
 ## Technologies Used
 
