@@ -1,10 +1,12 @@
 import React, { useState, memo } from 'react'
-import { appData, YOUTUBE_API_KEY } from '../config/data';
+import { appData } from '../config/data';
+import { YOUTUBE_API_KEY } from '../config/youtubeData';
 
 import YouTube from 'react-youtube';
 
 function InfoVideo({ selected }) {
     const [youtubeVideos, setYoutubeVideos] = useState([]);
+    //const [selectedVideos, setSelectedVideos] = useState([]);
     const selectedData = appData[selected];
     const opts = {
       height: '390',
@@ -21,7 +23,7 @@ function InfoVideo({ selected }) {
           return result.json()
         }).then(({ items }) => {
           if (items){
-            setYoutubeVideos([...videos, <YouTube className="container-video" videoId={items[0]?.id?.videoId} opts={opts} onReady={onReady} />]);
+            setYoutubeVideos([...youtubeVideos, <YouTube className="container-video" videoId={items[0]?.id?.videoId} opts={opts} onReady={onReady} />]);
           }
         });
     }
