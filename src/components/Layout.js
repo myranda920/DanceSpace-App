@@ -20,7 +20,6 @@ import SelectStyle from './SelectStyle';
 import InfoCard from './InfoCard';
 import InfoVideo from './InfoVideo';
 
-// Copyright in the Footer Section 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -36,7 +35,9 @@ function Copyright() {
 
 export default function Album() {
   const [data, setData] = React.useState({ response: {}, selected: '' });
+
   const cards = [1, 2, 3];
+
   const theme = createTheme({
     palette: {
       mode: 'light',
@@ -166,7 +167,6 @@ export default function Album() {
                   <CardMedia
                     component="img"
                     sx={{
-                      // 16:9
                       pt: '56.25%',
                     }}
                     image="Images/Information1Image.png"
@@ -184,22 +184,16 @@ export default function Album() {
                     There are also many studios that provide adult classes for more fun and exercise as well as great dance training. 
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    {/* <Button size="small">More Information</Button> */}
-                    {/* <Button size="small">Edit</Button> */}
-                  </CardActions>
                 </Card>
               </Grid>
             }
           </Grid>
         </Container>
       </main>
-
-      {/* Select Style Component */}
       <SelectStyle selected={data.selected} setData={setData} />
       <InfoCard data={data} />
       <InfoVideo selected={data.selected} />
-      {/* Footer Component/ stretch goal: to add a link with a link to google maps to find dance studios */}
+
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
           Ready to dance?

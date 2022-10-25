@@ -1,30 +1,31 @@
-import React, { useState, memo } from 'react'
+import React, { useState } from 'react'
 import { appData } from '../config/data';
 import { YOUTUBE_API_KEY } from '../config/youtubeData';
 
 import YouTube from 'react-youtube';
 
 function InfoVideo({ selected }) {
-    const [youtubeVideos, setYoutubeVideos] = useState([]);
-    //const [selectedVideos, setSelectedVideos] = useState([]);
-    const selectedData = appData[selected];
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 0,
-      },
-    }
+  const [youtubeVideos, setYoutubeVideos] = useState([])
+  const [selectedVideos, setSelectedVideos] = useState([])
+  const [lastSelected, setLastSelected] = useState('')
+
+  const selectedData = appData[selected];
+  const opts = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    },
+  }
 
     const getYoutubeId = async (youtubeVideoTitle) => {
       await fetch(`https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&maxResults=1&type=video&part=snippet&q=${youtubeVideoTitle}`)
         .then((result) => {
           return result.json()
-        }).then(({ items }) => {
-          if (items){
-            setYoutubeVideos([...youtubeVideos, <YouTube className="container-video" videoId={items[0]?.id?.videoId} opts={opts} onReady={onReady} />]);
-          }
+        }).then((data) => {
+          setYoutubeVideos([...youtubeVideos, <YouTube className="container-video" videoId={'077BgT3h6As'} opts={opts} onReady={onReady} />]);
+          setLastSelected(selected);
         });
     }
 
@@ -33,18 +34,26 @@ function InfoVideo({ selected }) {
         event.target.pauseVideo();
     }
 
-    const videos = [];
     if (selectedData?.youtubeVideoTitles) {
+      if (selected === lastSelected) return youtubeVideos;
+
       selectedData.youtubeVideoTitles.forEach((youtubeVideoTitle) => {
         getYoutubeId(youtubeVideoTitle)
       });
+
       return youtubeVideos;
     } else if (selectedData?.videoIds) {
-        selectedData.videoIds.forEach((videoId) => {
-          videos.push(<YouTube className="container-video" videoId={videoId} opts={opts} onReady={onReady} />);
+      if (selected === lastSelected) return selectedVideos;
+
+      const results = []
+      selectedData.videoIds.map((videoId) => {
+        results.push(<YouTube className="container-video" videoId={videoId} opts={opts} onReady={onReady} />); 
       });
-      return videos;
+
+      setSelectedVideos(results);
+      setLastSelected(selected);
+      return results;
     }
 }
 
-export default memo(InfoVideo);
+export default InfoVideo;

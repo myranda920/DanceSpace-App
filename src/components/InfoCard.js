@@ -26,7 +26,6 @@ export default function BasicCard(props) {
           {item?.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {/* {wikiContent} */}
         </Typography>
         <Typography variant="body2">
           {wikiContent}
@@ -34,7 +33,6 @@ export default function BasicCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-      {/* add link to button that takes you to the full wikipedia page */}
         <Button size="small" href={selectedData?.link} target="_blank">Learn More</Button>
       </CardActions>
     </Card>

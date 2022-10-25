@@ -6,7 +6,6 @@ import { appData } from '../config/data';
 
 import '../App.css';
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const danceStyles = [
   { label: 'Ballet', id: 1 },
   { label: 'Jazz', id: 2 },
@@ -44,7 +43,6 @@ export default function ComboBox(props) {
       id="combo-box-demo"
       options={danceStyles}
       onSelect={(event) => getInfo(event, props.setData)}
-      // center this, it is not center with all views
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Choose a Style of Dance" />}
     />
