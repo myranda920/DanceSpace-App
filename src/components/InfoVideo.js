@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { appData } from '../config/data';
-import { YOUTUBE_API_KEY } from '../config/youtubeData';
+import { YOUTUBE_API_KEY } from '../config/data';
 
 import YouTube from 'react-youtube';
 
