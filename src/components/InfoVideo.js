@@ -38,11 +38,13 @@ function InfoVideo({ selected }) {
       if (selected === lastSelected) return youtubeVideos;
 
       selectedData.youtubeVideoTitles.forEach((youtubeVideoTitle) => {
-        getYoutubeId(youtubeVideoTitle)
+        // getYoutubeId(youtubeVideoTitle)
+        console.log('api called');
       });
 
       return youtubeVideos;
     } else if (selectedData?.videoIds) {
+      console.log('rendered 2')
       if (selected === lastSelected) return selectedVideos;
 
       const results = []
@@ -57,3 +59,17 @@ function InfoVideo({ selected }) {
 }
 
 export default InfoVideo;
+
+// thursday morning steps 
+
+
+// put api key back into data.js
+// uncomment api call get
+// push to github
+// see if aws amplify works
+
+// comment out api call
+
+// youtubevideos, selectedvideos - merge selectedVideos and lastSelected into a nested state object 
+
+// const [data, setData] = React.useState({ response: {}, selected: '' });
