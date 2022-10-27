@@ -8,6 +8,8 @@ export const appData = {
         wikiApiKey: 'Ballet_Dance',
         youtubeVideoTitles: [
             'Chace Dance Company Beginner Ballet | Lesson 1', 
+            'TBS Classical Ballet Group, 10U, Masterpiece International Ballet Competition',
+            'Swan Lake - Act II pas de deux'
         ],
     },
     'Jazz': {

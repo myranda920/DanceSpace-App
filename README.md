@@ -24,3 +24,9 @@ AWS Amplify
 
 [Youtube API]
 
+### Future additions/ ideas
+
+Add Yelp API to Fetch businesses by location
+
+Add Yelp API to display business reviews 
+
